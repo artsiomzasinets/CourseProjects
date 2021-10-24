@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+P:/visual studio/CourseProjects/CourseProject9/main.cpp
+vector
+-
+ctime
+-
+algorithm
+-
+iostream
+-
+map
+-
+cassert
+-
+

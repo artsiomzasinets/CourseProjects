@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+P:/visual studio/CourseProjects/CourseProject7/main.cpp
+iostream
+-
+vector
+-
+ctime
+-
+string
+-
+algorithm
+-
+

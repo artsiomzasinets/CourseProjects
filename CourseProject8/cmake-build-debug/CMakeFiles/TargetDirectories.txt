@@ -1,0 +1,3 @@
+P:/visual studio/CourseProjects/CourseProject8/cmake-build-debug/CMakeFiles/CourseProject8.dir
+P:/visual studio/CourseProjects/CourseProject8/cmake-build-debug/CMakeFiles/edit_cache.dir
+P:/visual studio/CourseProjects/CourseProject8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
