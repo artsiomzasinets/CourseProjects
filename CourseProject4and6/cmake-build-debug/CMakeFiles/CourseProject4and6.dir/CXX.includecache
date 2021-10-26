@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.cpp
+WorkerOfCompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+chrono
+-
+../interface/ICompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/interface/ICompany.h
+../interface/IEmployee.h
+P:/visual studio/CourseProjects/CourseProject4and6/interface/IEmployee.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/interface/ICompany.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/interface/IEmployee.h
+

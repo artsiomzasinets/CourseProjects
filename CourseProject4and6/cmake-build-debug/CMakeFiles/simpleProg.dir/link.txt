@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\simpleProg.dir/objects.a
+E:\compilers\mingw64\bin\ar.exe qc CMakeFiles\simpleProg.dir/objects.a @CMakeFiles\simpleProg.dir\objects1.rsp
+E:\compilers\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\simpleProg.dir/objects.a -Wl,--no-whole-archive -o simpleProg.exe -Wl,--out-implib,libsimpleProg.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\simpleProg.dir\linklibs.rsp
