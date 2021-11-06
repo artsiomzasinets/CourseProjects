@@ -1,0 +1,10 @@
+.idea
+cmake-build-debug
+cmake-build-releaze
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs
+x64
+Debug

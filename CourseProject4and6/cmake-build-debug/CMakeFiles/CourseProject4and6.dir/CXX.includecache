@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.cpp
-WorkerOfCompany.h
-P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
-
 P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
 chrono
 -
@@ -21,4 +17,30 @@ P:/visual studio/CourseProjects/CourseProject4and6/interface/IEmployee.h
 P:/visual studio/CourseProjects/CourseProject4and6/interface/ICompany.h
 
 P:/visual studio/CourseProjects/CourseProject4and6/interface/IEmployee.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+realizationOfClass/Administrator.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Administrator.h
+realizationOfClass/Manager.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.h
+realizationOfClass/Programer.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Administrator.h
+../abstractClass/WorkerOfCompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.h
+../abstractClass/WorkerOfCompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.h
+../abstractClass/WorkerOfCompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
 
