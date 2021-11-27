@@ -91,25 +91,25 @@ void Bag::result() {
 
 
 int main() {
-    srand(time(0));
-    int sizeOfvector = 20;
-
-    std::vector<int> obj1;
-    std::vector<int> obj2(sizeOfvector /2);
-    for (size_t i = 0; i < sizeOfvector; i++) {
-    	obj1.push_back(rand() % 100);
-    }
-
-    //std::copy(obj1.begin() + obj1.size()/ 2, obj1.end(), obj2.begin());
-    obj2.assign(obj1.begin() + obj1.size() / 2, obj1.end());
-
-    for (auto i = obj1.begin(); i != obj1.end(); i++) {
-    	std::cout << " " << *i;
-    }
-    std::cout << std::endl;
-    for (auto i = obj2.begin(); i != obj2.end(); i++) {
-    	std::cout << " " << *i;
-    }
+//    srand(time(0));
+//    int sizeOfvector = 20;
+//
+//    std::vector<int> obj1;
+//    std::vector<int> obj2(sizeOfvector /2);
+//    for (size_t i = 0; i < sizeOfvector; i++) {
+//    	obj1.push_back(rand() % 100);
+//    }
+//
+//    //std::copy(obj1.begin() + obj1.size()/ 2, obj1.end(), obj2.begin());
+//    obj2.assign(obj1.begin() + obj1.size() / 2, obj1.end());
+//
+//    for (auto i = obj1.begin(); i != obj1.end(); i++) {
+//    	std::cout << " " << *i;
+//    }
+//    std::cout << std::endl;
+//    for (auto i = obj2.begin(); i != obj2.end(); i++) {
+//    	std::cout << " " << *i;
+//    }
     //----------------------------------------------
     std::cout << std::endl << std::endl;
     Bag obj(7.6);

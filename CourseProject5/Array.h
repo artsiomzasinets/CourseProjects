@@ -18,7 +18,7 @@ private:
 	}
 
 
-	void giveNewMemory(size_t& outSizeOfHeight, size_t& outSizeOfWidth) {
+	void giveNewMemory(size_t outSizeOfHeight, size_t outSizeOfWidth) {
 		if (arr != nullptr)
 		{
 			deleteMemory();
@@ -40,44 +40,47 @@ private:
 	}
 public:
 	Array():arr(nullptr), sizeOfHeight(0), sizeOfWidth(0) {
-
+		std::cout << "\nDefault constructor" << std::endl;
 	}
 
 	Array(T** outArr, size_t outSizeOfHeight, size_t outSizeOfWidth) {
+		std::cout << "\nconstructor with param" << std::endl;
 		giveNewMemory(outSizeOfHeight, outSizeOfWidth);
 		copyFromOutObject(outArr);
 		
 	}
 
 	Array(const Array& outObject) {
-		if (outObject.arr = nullptr) {
+		std::cout << "\ncopy constructor" << std::endl;
+		if (outObject.arr== nullptr) {
 			arr = nullptr;
 			sizeOfHeight = 0;
 			sizeOfWidth = 0;
 		}
-		else {
-			giveNewMemory(outObject.SizeOfHeight, outObject.SizeOfWidth);
+		
+			giveNewMemory(outObject.sizeOfHeight, outObject.sizeOfWidth);
 			copyFromOutObject(outObject.arr);
-		}
+		
 		
 	}
 
 
-	Array& operator=(const Array& outObject) {
-		
-		if (outObject.arr = nullptr) {
+	Array& operator=(const  Array& outObject) {
+		std::cout << "\ncopy operator" << std::endl;
+		if (outObject.arr == nullptr) {
 			arr = nullptr;
 			sizeOfHeight = 0;
 			sizeOfWidth = 0;
 		}
-		else {
-			giveNewMemory(outObject.SizeOfHeight, outObject.SizeOfWidth);
+		
+			giveNewMemory(outObject.sizeOfHeight, outObject.sizeOfWidth);
 			copyFromOutObject(outObject.arr);
-		}
+		
 		return *this;
 	}
 
 	~Array() {
+		std::cout << "\nDestructor" << std::endl;
 		deleteMemory();
 	}
 

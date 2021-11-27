@@ -5,7 +5,7 @@
 
 
 int main() {
-
+    //TODO user enter
 	Currency<USD> objUsd(15.5);
     Currency<EUR> objEur(9.8);
     Currency<BYR> objByr;

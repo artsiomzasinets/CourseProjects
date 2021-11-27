@@ -1,70 +1,117 @@
 #include <iostream>
+#include <ctime>
 
+#include "queue.h"
+
+//Напишите шаблон класса для работы с очередью. Учесть, что очереди требуется два индекса: индекс хвоста,
+//куда добавляются новые элементы, и индекс головы очереди, откуда исчезают старые.
+//Программист не будет совершать ошибок при написании модели очереди. Например, вместимость очереди не будет превышена,
+// а из пустой очереди не будет производиться попыток удаления данных.
+// Предусмотреть пользовательский ввод /вывод данных.
+//Определите несколько очередей разных типов и поработайте с их данными.
+//Добавьте механизм обработки исключений в программу:
+// при превышении размера очереди и при попытке удаления данных из пустой очереди.
+// Программа должна обеспечивать повторную попытку ввода данных пользователем без нарушения целостности содержимого очереди.
+
+
+template<class T>
+void enter(Queue<T> &object) {
+    std::cout << "Enter element to push to Queue:";
+    T choice;
+    while (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Enter again:";
+    }
+    object.push(choice);
+}
+
+template<class T>
+void generate(Queue<T> &object) {
+    srand(time(0));
+    std::cout << "How much elements do you wanna generate?:";
+    size_t choice;
+
+    while (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Enter again:";
+    }
+    for (size_t i = 0; i < choice; i++) {
+        object.push(rand() % 100);
+    }
+}
+
+template<class T>
+void removeQ(Queue<T> &object) {
+    srand(time(0));
+    std::cout << "How much elements do you wanna remove?:";
+    size_t choice;
+
+    while (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Enter again:";
+    }
+    for (size_t i = 0; i < choice; i++) {
+        object.pop();
+    }
+}
 
 int main() {
+    Queue<int> obj1;
+    obj1.push(5);
+    obj1.push(10);
+    Queue<int> obj2(obj1);
+    Queue<int> obj3;
+    obj3 = std::move(obj1);
+    int a = 4;
+    obj1.push(a);
+
+    Queue<int> obj4;
+
+    bool loop = true;
+    while (loop) {
+        std::cout
+                << "1-Enter a elemet\n2-Print all\n3-Enter range to generating automatically\n4-remove\n5-exit\nChoice:";
+        unsigned short choice;
+        while (!(std::cin >> choice && choice >= 0 && choice <= 5)) {
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            std::cout << "Enter again:";
+        }
+        switch (choice) {
+            case 1:
+                enter(obj4);
+                break;
+            case 2:
+                std::cout << obj4;
+                break;
+            case 3:
+                generate(obj4);
+                break;
+            case 4:
+                try {
+                    removeQ(obj4);
+                } catch (std::underflow_error &error) {
+                    std::cerr << "Can not pop more. " << error.what() << std::endl;
+                }
+                break;
+            case 5:
+                loop = false;
+                break;
+        }
+    }
+
+
+//    try {
+//        for (;;) {
+//            obj4.pop();
+//        }
+//    } catch (std::underflow_error &error) {
+//        std::cerr << error.what() << std::endl;
+//    }
+
 
     return 0;
 }
-
-//
-//class Fraction{
-//private:
-//    double a, b;
-//public:
-//    Fraction(double a , double b){
-//        if(b == 0)
-//            throw std::runtime_error("Error!!! b = 0!!! in class");
-//        this->a = a;
-//        this->b = b;
-//    }
-//    double result(){
-//        return a / b;
-//    }
-//
-//    friend std::ostream& operator<<(std::ostream &os, Fraction& obj){
-//        os << "a = " << obj.a << "\nb = " << obj.b << "\nresultOfDivision = " << obj.result() << std::endl;
-//        return  os;
-//    }
-//};
-//
-//int fun(double a, double b){
-//    if(b ==0)
-//        throw std::invalid_argument("b = 0 !!!! in function");
-//    else{
-//        return a/b;
-//    }
-//}
-////--------------------------main
-//double a,b;
-//try{
-//std::cout << "Enter a and b:";
-//while(!(std::cin >> a >> b)){
-//std::cin.clear();
-//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-//std::cout << "Wrong enter!\nEnter again:";
-//}
-//std::cout << "result = " << fun(a,b) << std::endl;
-//}catch (std::invalid_argument& error){
-//std::cerr <<  error.what() << std::endl;
-//}catch (...){
-//std::cerr << "something bad happened" << std::endl;
-//}
-//
-//try{
-//Fraction(35, 0);
-//}catch (std::runtime_error& error){
-//std::cerr << error.what() << std::endl;
-//}catch(...){
-//std::cerr << "something bad happened" << std::endl;
-//}
-//
-//try{
-//Fraction obj(35, 5);
-//std::cout << obj;
-//Fraction a(30,0);
-//
-//} catch (std::exception& error) {
-//std::cerr << error.what() << std::endl;
-//}catch(...){
-//std::cerr << "something bad happened" << std::endl;
-//}

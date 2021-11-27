@@ -18,13 +18,10 @@ int main() {
 
 	Array<int> obj(arr,size, size);
 	obj.show();
-	std::cout << task(obj);
-
-
-
-	for (size_t i = 0; i < size; ++i) {
-		delete[] arr[i];
-	}
-	delete[] arr;
+	std::cout << task(obj);//friend object
+	Array<int> obj1(obj);
+	Array<int> obj2;
+	obj2 = obj;
+	
 	return 0;
 }
