@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\CourseProject4and6.dir/objects.a
-E:\compilers\mingw64\bin\ar.exe qc CMakeFiles\CourseProject4and6.dir/objects.a @CMakeFiles\CourseProject4and6.dir\objects1.rsp
-E:\compilers\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\CourseProject4and6.dir/objects.a -Wl,--no-whole-archive -o CourseProject4and6.exe -Wl,--out-implib,libCourseProject4and6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CourseProject4and6.dir\linklibs.rsp

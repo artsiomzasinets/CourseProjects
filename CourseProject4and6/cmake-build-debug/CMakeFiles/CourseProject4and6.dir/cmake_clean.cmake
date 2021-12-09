@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CourseProject4and6.dir/realizationOfClass/Programer.cpp.obj"
   "CourseProject4and6.exe"
   "CourseProject4and6.exe.manifest"
+  "CourseProject4and6.lib"
   "CourseProject4and6.pdb"
-  "libCourseProject4and6.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

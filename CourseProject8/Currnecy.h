@@ -23,6 +23,10 @@ public:
 
     Currency &operator-(Currency &);
 
+    Currency& operator+(double );
+
+    Currency &operator-(double);
+
     Currency &operator*(Currency &);
 
     Currency &operator/(Currency &);
@@ -33,7 +37,7 @@ public:
 
     void show();
 
-    void show(const char *);
+    void show(std::string&);
 
     double getAmountOfMoneyInRightCurrency(const char*);
 
@@ -74,6 +78,19 @@ inline Currency<T> &Currency<T>::operator+(Currency & outObj) {
 }
 
 template<class T>
+inline Currency<T> &Currency<T>::operator+(double outObj) {
+    amountOfMoney += outObj;
+    return *this;
+}
+
+template<class T>
+inline Currency<T> &Currency<T>::operator-(double outObj) {
+    amountOfMoney -= outObj;
+    return *this;
+}
+
+
+template<class T>
 inline Currency<T> &Currency<T>::operator-(Currency &outObj) {
     amountOfMoney -= exchange(outObj.typeOfMoney.getNameOfValuta());
     return *this;
@@ -107,33 +124,28 @@ inline void Currency<T>::show(){
 }
 
 template<class T>
-inline void Currency<T>::show(const char *val) {
-    if (val == typeOfMoney.getNameOfValuta()) {
-        std::cout << "\nYou entered the equal currency!" << std::endl;
-    } else {
-        std::cout << amountOfMoney << " " << typeOfMoney.getNameOfValuta() << " = ";
-        const size_t typeOfMoneyHash = typeOfMoney.getHash(val);
+inline void Currency<T>::show(std::string& val) {
 
-        if (typeOfMoneyHash == typeOfMoney.getHash("USD")) {
+        std::cout << amountOfMoney << " " << typeOfMoney.getNameOfValuta() << " = ";
+        if (val == "USD") {
             std::cout << exchange("USD") << " USD" << std::endl;
-        } else if (typeOfMoneyHash == typeOfMoney.getHash("EUR")) {
+        }
+        else if (val == "EUR") {
             std::cout << exchange("EUR") << " EUR" << std::endl;
 
-        } else if (typeOfMoneyHash == typeOfMoney.getHash("BYR")) {
+        } else if (val== "BYR") {
             std::cout << exchange("BYR") << " BYR" << std::endl;
 
-        } else if (typeOfMoneyHash == typeOfMoney.getHash("RUB")) {
+        } else if (val == "RUB") {
             std::cout << exchange("RUB") << " RUB" << std::endl;
 
-        } else if (typeOfMoneyHash == typeOfMoney.getHash("UAH")) {
+        } else if (val== "UAH") {
             std::cout << exchange("UAH") << " UAH" << std::endl;
 
-        } else if (typeOfMoneyHash == typeOfMoney.getHash("PLN")) {
+        } else if (val== "PLN") {
             std::cout << exchange("PLN") << " PLN" << std::endl;
 
         }
-
-    }
 
 }
 
@@ -141,6 +153,8 @@ template<class T>
 inline double Currency<T>::getAmountOfMoneyInRightCurrency(const char * val) {
     return exchange(val);
 }
+
+
 
 
 #endif // !CURRENECY_H_

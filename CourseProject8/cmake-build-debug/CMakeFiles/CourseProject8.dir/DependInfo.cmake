@@ -11,7 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "P:/visual studio/CourseProjects/CourseProject8/main.cpp" "P:/visual studio/CourseProjects/CourseProject8/cmake-build-debug/CMakeFiles/CourseProject8.dir/main.cpp.obj"
   "P:/visual studio/CourseProjects/CourseProject8/valuta.cpp" "P:/visual studio/CourseProjects/CourseProject8/cmake-build-debug/CMakeFiles/CourseProject8.dir/valuta.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

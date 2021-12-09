@@ -17,6 +17,7 @@ private:
     Node* begin;
     Node* end;
     size_t sizeQ;
+    size_t capacity;//TODO capacity
 private:
     void copy(const Queue&);
     void remove();// delete Nodes
@@ -30,6 +31,7 @@ public:
 
     bool empty() const;
     size_t size() const;
+    void setCapacity(size_t);
 
     void push(T&);//insert elem to the end
     void push(T&&);
@@ -68,6 +70,7 @@ inline void Queue<T>::copy(const Queue<T> &outObj) {
     }
 
     end = thisPointer;
+    capacity = outObj.capacity;
 
 }
 
@@ -84,12 +87,12 @@ inline void Queue<T>::remove() {
         }
         begin = nullptr;
         end = nullptr;
-        sizeQ = 0;
+        capacity = sizeQ = 0;
     }
 }
 
 template<class T>
-inline Queue<T>::Queue():begin(nullptr), end(nullptr), sizeQ(0) {
+inline Queue<T>::Queue():begin(nullptr), end(nullptr), sizeQ(0), capacity(0) {
 
 }
 template<class T>
@@ -97,6 +100,8 @@ inline Queue<T>::Queue(const Queue<T> & outObj) {
     if(outObj.empty()){
         Queue();
     }else{
+        capacity = 0;
+        sizeQ = 0;
         begin = nullptr;
         end = nullptr;
         copy(outObj);
@@ -108,9 +113,11 @@ inline Queue<T>::Queue(Queue<T> &&outObj) {
     begin = outObj.begin;
     end = outObj.end;
     sizeQ = outObj.sizeQ;
+    capacity = outObj.capacity;
     outObj.begin = nullptr;
     outObj.end = nullptr;
     outObj.sizeQ = 0;
+    outObj.capacity = 0;
 }
 
 template<class T>
@@ -143,9 +150,11 @@ inline Queue<T> &Queue<T>::operator=(Queue<T> &&outObj) {
         begin = outObj.begin;
         end = outObj.end;
         sizeQ = outObj.sizeQ;
+        capacity = outObj.capacity;
         outObj.begin = nullptr;
         outObj.end = nullptr;
         outObj.sizeQ = 0;
+        outObj.capacity = 0;
     }
     return *this;
 }
@@ -167,12 +176,18 @@ inline  size_t Queue<T>::size() const{
 template<class T>
 inline void Queue<T>::push(T& outElem) {
     try {
+        if(sizeQ + 1 == capacity){
+            std::cerr << "Can't push. Capacity is full" << std::endl;
+            return;
+        }
+
         Node * temp =  new Node(outElem);
         if(sizeQ > 0){
             end->next = temp;
             end = end->next;
             sizeQ++;
         }else{
+            capacity = 5;
             begin = new Node(outElem);
             end = begin;
             sizeQ = 1;
@@ -189,12 +204,17 @@ inline void Queue<T>::push(T& outElem) {
 template<class T>
 inline void Queue<T>::push(T&& outElem) {
     try {
+        if(sizeQ + 1 == capacity){
+            std::cerr << "Can't push. Capacity is full" << std::endl;
+            return;
+        }
         Node * temp =  new Node(outElem);
         if(sizeQ > 0){
             end->next = temp;
             end = end->next;
             sizeQ++;
         }else{
+            capacity = 5;
             begin = new Node(outElem);
             end = begin;
             sizeQ = 1;
@@ -211,7 +231,7 @@ inline void Queue<T>::push(T&& outElem) {
 template<class T>
 inline void Queue<T>::pop() {
     if(empty()){
-        throw std::underflow_error("Queue is empty");
+        throw std::out_of_range("Queue is empty");
     }
     T ret = begin->elem;
     Node* temp = begin->next;
@@ -235,6 +255,10 @@ inline std::ostream& operator<<(std::ostream& os, const Queue<T>& outObject) {
     return os;
 }
 
+template<class T>
+void Queue<T>::setCapacity(size_t c) {
+    capacity = c;
+}
 
 
 #endif //COURSEPROJECT11_QUEUE_H

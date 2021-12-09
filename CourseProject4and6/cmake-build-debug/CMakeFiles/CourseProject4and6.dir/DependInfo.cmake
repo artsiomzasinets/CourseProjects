@@ -14,7 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.cpp" "P:/visual studio/CourseProjects/CourseProject4and6/cmake-build-debug/CMakeFiles/CourseProject4and6.dir/realizationOfClass/Manager.cpp.obj"
   "P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.cpp" "P:/visual studio/CourseProjects/CourseProject4and6/cmake-build-debug/CMakeFiles/CourseProject4and6.dir/realizationOfClass/Programer.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

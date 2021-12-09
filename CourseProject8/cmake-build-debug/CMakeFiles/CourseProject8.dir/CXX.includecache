@@ -13,14 +13,12 @@ valuta.h
 P:/visual studio/CourseProjects/CourseProject8/valuta.h
 
 P:/visual studio/CourseProjects/CourseProject8/main.cpp
-iostream
--
 Currnecy.h
 P:/visual studio/CourseProjects/CourseProject8/Currnecy.h
-
-P:/visual studio/CourseProjects/CourseProject8/valuta.cpp
-valuta.h
-P:/visual studio/CourseProjects/CourseProject8/valuta.h
+vector
+-
+algorithm
+-
 
 P:/visual studio/CourseProjects/CourseProject8/valuta.h
 map

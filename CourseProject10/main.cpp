@@ -75,7 +75,6 @@ int main() {
                 break;
             case 8:
                 printAllSurnameStartsFromLetter(fileName);
-
                 break;
             case 9:printDataAll(object,fileName);break;
             case 0:
@@ -279,21 +278,8 @@ void saveData(const std::vector<Employee> &object, const char *file, bool flag) 
 void printDataAll(std::vector<Employee> &object, const char* file) {
     std::cout << '\n';
 
-    if(object.empty()){
-        std::cout << "vector is empty. maybe you wanted to download data from the database?(y/n)";
-        char choice;
-        while (!(std::cin >> choice && (choice == 'y' || choice == 'n'))){
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Enter again(y/n):";
-        }
-        if(choice == 'y'){
-            downloadDataFromFile(object, file);
-        }else{
-            return;
-        }
+    downloadDataFromFile(object, file);
 
-    }
     std::cout << '\n';
 
     for (std::vector<Employee>::const_iterator iter = object.cbegin(); iter != object.cend(); iter++) {

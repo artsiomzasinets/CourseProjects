@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.cpp
+WorkerOfCompany.h
+P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+
 P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
 chrono
 -
@@ -32,13 +36,25 @@ P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.h
 realizationOfClass/Programer.h
 P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.h
 
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Administrator.cpp
+Administrator.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Administrator.h
+
 P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Administrator.h
 ../abstractClass/WorkerOfCompany.h
 P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
 
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.cpp
+Manager.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.h
+
 P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Manager.h
 ../abstractClass/WorkerOfCompany.h
 P:/visual studio/CourseProjects/CourseProject4and6/abstractClass/WorkerOfCompany.h
+
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.cpp
+Programer.h
+P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.h
 
 P:/visual studio/CourseProjects/CourseProject4and6/realizationOfClass/Programer.h
 ../abstractClass/WorkerOfCompany.h

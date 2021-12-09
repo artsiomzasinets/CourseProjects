@@ -31,12 +31,12 @@ void generate(Queue<T> &object) {
     srand(time(0));
     std::cout << "How much elements do you wanna generate?:";
     size_t choice;
-
     while (!(std::cin >> choice)) {
         std::cin.clear();
         std::cin.ignore(1000, '\n');
         std::cout << "Enter again:";
     }
+    object.setCapacity(choice + object.size() + 1);
     for (size_t i = 0; i < choice; i++) {
         object.push(rand() % 100);
     }
@@ -82,19 +82,19 @@ int main() {
         }
         switch (choice) {
             case 1:
-                enter(obj4);
+                enter(obj4);std::cout << std::endl;
                 break;
             case 2:
-                std::cout << obj4;
+                std::cout << obj4;std::cout << std::endl;
                 break;
             case 3:
-                generate(obj4);
+                generate(obj4);std::cout << std::endl;
                 break;
             case 4:
                 try {
-                    removeQ(obj4);
-                } catch (std::underflow_error &error) {
-                    std::cerr << "Can not pop more. " << error.what() << std::endl;
+                    removeQ(obj4);std::cout << std::endl;
+                } catch (std::out_of_range &error) {
+                    std::cerr << "\nCan not pop more. " << error.what() << std::endl;
                 }
                 break;
             case 5:
